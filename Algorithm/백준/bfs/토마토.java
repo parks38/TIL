@@ -6,6 +6,7 @@ import java.util.*;
  *  boolean[][] visited
  *
  *  정수 1은 익은 토마토, 정수 0은 익지 않은 토마토, 정수 -1은 토마토가 들어있지 않은 칸
+ 가장 빠르게 번지는 방법 확님ㄴ 
  */
 public class 토마토 {
 
