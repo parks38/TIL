@@ -15,13 +15,9 @@ class Solution {
             if (lottos[i] == 0) zero++;
             if (winList.contains(lottos[i])) count++;
         }
-        
-        answer[0] = 6 - (count+zero) + 1;
-        answer[1] = 6 - (count) + 1;
-        if (zero == 6) {
-            answer[1] = 6;
-        }
-        
+
+        answer[0] = Math.min(6 - (count+zero) + 1, 6);
+        answer[1] = Math.min(6 - (count) + 1, 6);
         return answer;
     }
 }
