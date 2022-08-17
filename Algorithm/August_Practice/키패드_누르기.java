@@ -42,7 +42,7 @@ class 키패드_누르기 {
                 /**
                 * Gap 차이가 달라도 위 아래 양옆은 1 차이가 남으로 
                  */
-                    if (hand.equals("right")) {
+                    if (hand.equals("right")) {  // equals (값) /  == (주소값) 비교
                         answer += "R";
                         rightPosition = curr;
                     } else {
