@@ -6,14 +6,16 @@ import java.util.*;
 class 키패드_누르기 {
     
     public String solution(int[] numbers, String hand) {
+        public String solution(int[] numbers, String hand) {
         String answer = "";
-        int leftPosition = 0;
-        int rightPosition = 0;
+        int leftPosition = 10;  // *
+        int rightPosition = 12; // #
+            
         for (int i = 0; i < numbers.length; i++) {
             int curr = numbers[i];
             
             // anyMatch, contains 
-            if (curr % 3 == 1) {
+            if ( curr % 3 == 1) {
                 answer += "L";
                 leftPosition = curr;
             } else if (curr % 3 == 0 && curr != 0){
@@ -28,17 +30,19 @@ class 키패드_누르기 {
                 int gapRight = Math.abs(curr - rightPosition) / 3 + Math.abs(curr - rightPosition) % 3;
                 int gapLeft = Math.abs(curr - leftPosition) / 3 + Math.abs(curr - leftPosition) % 3;
 
-                if (gapRight - gapLeft > 0) {
+                if (gapRight > gapLeft) {
+                    
                     answer += "L";
                     leftPosition = curr;
-                } else if (gapRight - gapLeft < 0) {
+                } else if (gapRight < gapLeft) {
+                    
                     answer += "R";
                     rightPosition = curr;
                 } else { // gap == 0
                 /**
                 * Gap 차이가 달라도 위 아래 양옆은 1 차이가 남으로 
                  */
-                    if (hand == "right") {
+                    if (hand.equals("right")) {
                         answer += "R";
                         rightPosition = curr;
                     } else {
